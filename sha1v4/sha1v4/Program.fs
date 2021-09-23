@@ -43,18 +43,17 @@ let main argv =
         printf "%A" (saleman.ToString())
     let lab2A (file) =
         async{
-            printf "hello"
             let s = System.IO.File.ReadAllText(file,Encoding.UTF8)
             let a = lab2(s)
-            printf "%A" a
+            printf "%A\n" a
         }
         
 
     let lab5 e =
         let files = [
-            "C:\Users\Admin\Documents\GitHub\Sem4\sha1v4\sha1v4\files\1.txt"
-            "C:\Users\Admin\Documents\GitHub\Sem4\sha1v4\sha1v4\files\2.txt"
-            "C:\Users\Admin\Documents\GitHub\Sem4\sha1v4\sha1v4\files\3.txt"
+            @"C:\Users\Admin\Documents\GitHub\Sem4\sha1v4\sha1v4\files\1.txt"
+            @"C:\Users\Admin\Documents\GitHub\Sem4\sha1v4\sha1v4\files\2.txt"
+            @"C:\Users\Admin\Documents\GitHub\Sem4\sha1v4\sha1v4\files\3.txt"
         ]
         files
         |>List.map lab2A
@@ -62,6 +61,7 @@ let main argv =
         |>Async.RunSynchronously
         |> ignore
         0
+    lab5 0
     0 // return an integer exit code
 
 
