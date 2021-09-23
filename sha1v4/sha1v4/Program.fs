@@ -3,6 +3,7 @@
 open System
 open System.Text
 open File2
+open File3
 
 [<EntryPoint>]
 let main argv =
@@ -61,7 +62,18 @@ let main argv =
         |>Async.RunSynchronously
         |> ignore
         0
-    lab5 0
+    //lab5 0
+
+    let lab6 e =
+        let gr = [('F',str "F--F--F-")]
+        let lsys = NApply 2 gr (str "F-F++F-")
+        lsys |> toString
+        let B = TurtleBitmapVisualizer 40.0 (Math.PI/180.0*60.0) lsys
+        B.Save(@"C:\lab\bitmap.jpg")
+        
+        
+        0
+    lab6 0
     0 // return an integer exit code
 
 
