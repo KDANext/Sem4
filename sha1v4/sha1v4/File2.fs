@@ -11,7 +11,9 @@ type People(name) =
  
 type Client(name) = 
     inherit People(name)
+
     
 type Salesman(name) =
     inherit People(name)
-    
+    let Sale(client:Client) = 
+        printf "Продавец %A продал клиенту %A",name,client.Name;    
